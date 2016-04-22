@@ -70,3 +70,4 @@ rm $tmpfile
 if [[ $URL ]]; then
     rm $LOGFILE
 fi
+https://github.com/andrewbradnan/SIGTRAP
