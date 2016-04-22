@@ -8,7 +8,6 @@ SIGTRAP's in release builds for the App Store could be from multiple lines and t
 ```
 Results look like....
 
-```
 (lldb) command source -s 0 '/tmp/lldb-cmd-script.ZpQZ6E'
 Executing commands in '/tmp/lldb-cmd-script.ZpQZ6E'.
 (lldb) target create -d -a arm MyApp-Release.xcarchive/Products/Applications/MyApp.app
@@ -25,7 +24,7 @@ error: MyApp Can't parse types because an error occurred creating AST context: C
      Function: id = {0x0034f235}, name = "<unknown>", range = [0x0049a5c4-0x0049c0f4)
        Blocks: id = {0x0034f235}, range = [0x0049a5c4-0x0049c0f4)
                id = {0x0034f307}, ranges = [0x0049a5e8-0x0049a67c)[0x0049a684-0x0049a6a0)[0x0049a6d0-0x0049ad3c)[0x0049ad44-0x0049ad54)[0x0049ad60-0x0049ad68)[0x0049adc0-0x0049b1bc)[0x0049b1c4-0x0049b324)[0x0049b330-0x0049b338)[0x0049b390-0x0049c0f4)
-    LineEntry: [0x0049bbd0-0x0049bbf8): /Users/olssvcxe/_work/15/s/MyApp/**SomeClass.swift:602:28**
+    **LineEntry:** [0x0049bbd0-0x0049bbf8): /Users/olssvcxe/_work/15/s/MyApp/**SomeClass.swift:602:28**
        Symbol: id = {0x00004741}, range = [0x0049a5c4-0x0049c0f4), name="___lldb_unnamed_function16452$$MyApp"
      Variable: id = {0x0034f2b9}, name = "self", type = <unknown>, location =  r10, decl = CardCell.swift:544
-```
+
