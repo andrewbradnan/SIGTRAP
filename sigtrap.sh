@@ -38,7 +38,7 @@ done
 # if no logfile then use URL
 if [[ ! $LOGFILE ]]; then
     LOGFILE=$(mktemp /tmp/crashlog.XXXXXX)
-    curl $URL > $LOGFILE
+    curl -s -o $LOGFILE $URL
 fi
 trap_location=`egrep -o "lr:\s*(0x\S*)" $LOGFILE | egrep -o "0x\S*"`
 machine=`egrep -o "Code Type:\s*.*" $LOGFILE | egrep -o "\S*$"`
@@ -64,7 +64,7 @@ LOAD+=$FULLAPP
 echo $LOAD > $tmpfile
 echo target modules load -f $APP __TEXT $base_address >> $tmpfile
 echo 'image lookup -v -a ' $trap_location >> $tmpfile
-#echo 'q' >> $tmpfile
+echo 'q' >> $tmpfile
 xcrun lldb -s $tmpfile
 rm $tmpfile
 if [[ $URL ]]; then
